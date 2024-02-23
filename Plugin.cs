@@ -15,7 +15,7 @@ namespace ToolsArentTools
     public class ToolsArentToolsPlugin : BaseUnityPlugin
     {
         internal const string ModName = "ToolsArentTools";
-        internal const string ModVersion = "1.0.0";
+        internal const string ModVersion = "1.0.1";
         internal const string Author = "Azumatt";
         private const string ModGUID = $"{Author}.{ModName}";
         private static string ConfigFileName = $"{ModGUID}.cfg";
@@ -38,7 +38,10 @@ namespace ToolsArentTools
         {
             foreach (GameObject fab in __instance.m_prefabs.Where(fab => fab.name is "Hammer" or "Cultivator" or "Hoe" || fab.name.ToLower().Contains("pickaxe")))
             {
-                fab.GetComponent<ItemDrop>().m_itemData.m_shared.m_itemType = ItemDrop.ItemData.ItemType.OneHandedWeapon;
+                if (fab.TryGetComponent(out ItemDrop itemDrop))
+                {
+                    itemDrop.m_itemData.m_shared.m_itemType = ItemDrop.ItemData.ItemType.OneHandedWeapon;
+                }
             }
         }
     }
