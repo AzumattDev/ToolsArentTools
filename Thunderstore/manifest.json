@@ -1,6 +1,6 @@
 {
   "name": "ToolsArentTools",
-  "version_number": "1.0.1",
+  "version_number": "1.0.2",
   "website_url": "https://github.com/AzumattDev/ToolsArentTools",
   "description": "Makes tools not tools. Makes them one handed weapons instead. Equip a torch (or hoe, or cultivator, etc) at the same time now. Yay",
   "dependencies": [
